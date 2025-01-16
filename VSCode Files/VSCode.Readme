@@ -1,1 +1,43 @@
 
+We used VSCode along with CoPilot to build all our models For more in-depth description for how VSCode was utilized, please read the information below:
+
+Independent Analysis
+The initial step in our analysis was to explore each dataset independently due to the lack of shared keys between some datasets. This approach allowed us to identify valuable trends and patterns within individual datasets, which could later inform our combined analysis.
+Userbase Analysis:
+Focus: Understanding churn trends based on demographics and subscription types.
+Key Insights:
+Subscription type (e.g., Basic, Standard, Premium) had a direct relationship with churn, where Basic users exhibited higher churn rates due to fewer features and lower value propositions.
+Demographic variables like age and gender revealed that younger users tended to churn less, indicating better content alignment with their preferences.
+Days Since Last Payment was identified as a critical feature for determining churn, with users exceeding 30 days since their last payment more likely to churn.
+Engagement Metrics:
+Clickstream:
+Metrics such as Total Clicks and Average Clicks provided insights into user navigation behavior. High click activity often indicated potential frustration due to difficulties in finding content.
+Viewing Activity:
+Average Session Duration was analyzed to understand user engagement with content. Shorter sessions were linked to dissatisfaction with content relevance or quality.
+Devices:
+Playback Duration Days highlighted differences in device usage patterns, revealing that certain devices (e.g., Smart TVs) were associated with longer playback times and lower churn rates.
+Search History:
+Search Count was used to gauge user content exploration. High search counts without playback indicated dissatisfaction with content availability, especially in certain regions.
+Combined Analysis
+To develop a holistic understanding of user behavior, datasets with shared keys (e.g., Profile Name) were merged. This integration allowed us to evaluate the interplay between engagement metrics, user demographics, and subscription characteristics.
+Merging Approach:
+Datasets like Clickstream, Viewing Activity, Devices, and Search History were merged with the Userbase using the Profile Name key.
+Aggregated metrics such as Total Clicks, Playback Duration Days, and Search Count were calculated to capture cumulative user activity and engagement.
+Aggregated Features:
+Total Clicks: Summarized user navigation activity.
+Playback Duration Days: Aggregated playback durations across devices.
+Search Count: Highlighted content exploration tendencies.
+Demographics: Integrated age, subscription type, and monthly revenue from the Userbase.
+Insights:
+The combined dataset revealed correlations between engagement patterns and churn. For example, users with high search counts and low playback durations were identified as high-risk churn candidates.
+Device-specific trends showed that Smart TVs and laptops had higher engagement, while smartphones and tablets were associated with shorter playback durations.
+Modeling Approach
+To predict churn effectively and deliver actionable insights, we applied a two-step modeling approach:
+Baseline Model:
+Logistic Regression: Used as a baseline due to its interpretability and ability to provide clear relationships between predictors and churn. This model allowed us to understand the relative impact of features like subscription type and engagement metrics on churn likelihood.
+Advanced Model:
+Random Forest Classifier: Selected for its ability to handle complex feature interactions and non-linear relationships. Random Forest also provided feature importance metrics, enabling us to prioritize actionable predictors for churn reduction strategies.
+Evaluation Metrics:
+Accuracy: Assessed the overall performance of the models.
+Precision and Recall: Focused on correctly identifying churned users without overpredicting, ensuring actionable results for retention strategies.
+AUC-ROC: Used to evaluate model robustness in distinguishing between churned and non-churned users.
