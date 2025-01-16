@@ -1,0 +1,72 @@
+
+Step 2: Data Understanding
+We used rich datasets found through Kaggle public database. Here’s how we’ll use them:
+Netflix User Base:
+Identify user demographics, subscription type, and payment patterns.
+All_Clickstream:
+Analyze navigation patterns and engagement (e.g., browsing, movie details, playback).
+All_Devices:
+Understand device usage and its correlation with user activity.
+All_Profiles:
+Segment profiles by language, maturity level, and privacy settings.
+All_SearchHistory:
+Explore search trends and interaction types.
+All_ViewingActivity:
+Analyze viewing behaviors (frequency, session duration, titles watched).
+netflix_titles:
+Enrich user data with content metadata (genres, release year, etc.).
+
+Step 3: Data Cleaning and Preparation
+Real world data is messy. We conducted several comprehensive cleaning and preparation analytical techniques to optimize our data for analysis.
+Data Cleaning:
+Handle missing or inconsistent data (e.g., missing playback dates, profile transfer details).
+Standardize date formats across all datasets.
+Feature Engineering:
+Engagement Metrics: Total viewing time, number of searches, playback frequency.
+Subscription Patterns: Time since the last payment, subscription changes.
+Content Preferences: Most-watched genres, preferred content rating (e.g., TV-MA, PG-13).
+Behavioral Trends: Frequency of navigation actions, abandoned searches.
+Data Merging:
+Combine datasets based on User ID or Profile Name to create a unified dataset.
+
+Step 4: Exploratory Data Analysis (EDA)
+Churn Definition:
+Users who haven’t made a payment in the last 30 days or more.
+Visualizations:
+Age distribution, device usage, and churn rate by subscription type.
+Engagement metrics for churned vs. retained users.
+Correlation Analysis:
+Identify key drivers of churn (e.g., low engagement, device type).
+
+Step 5: Model Building
+Target Variable: Churn (1 = churned, 0 = retained).
+Model Pipeline:
+Split data into training (70%) and testing (30%) sets.
+Use techniques like oversampling (SMOTE) if data is imbalanced.
+Model Selection:
+Logistic Regression (baseline model).
+Random Forest or Gradient Boosting (e.g., XGBoost) for performance.
+Feature Importance:
+Use SHAP or permutation importance to explain model predictions.
+
+Step 6: Evaluation
+Metrics: Precision, Recall, F1-Score, ROC-AUC.
+Cross-validation to ensure robustness.
+Analyze false positives/negatives to fine-tune the model.
+
+Step 7: Deployment
+Retention Dashboard:
+Use analytical techniques to visualize:
+Churn predictions.
+Key drivers of churn.
+Segmented retention strategies.
+Automated Alerts:
+Set up alerts for users at high risk of churn.
+Retention Campaigns:
+Provide insights for personalized retention campaigns (e.g., discounts, content recommendations).
+
+Step 8: Documentation and Portfolio
+Deliverables:
+Technical report outlining the model and findings.
+GitHub repository with all code, datasets (if permissible), and documentation.
+Interactive dashboard for recruiters to explore your work.
